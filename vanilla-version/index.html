@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nina Bertrand</title>
+    <link rel="stylesheet" href="src/style.css"/>
+  </head>
+  <body>
+    <header>
+      <div class="titles">
+        <h1>Nina Bertrand</h1>
+        <h2>Junior Developer</h2>
+      </div>
+      <nav class="page-menu">
+        <ul class="menu">
+          <li class="about">About</li>
+          <li class="portfolio">Portfolio</li>
+          <li class="blog">Blog</li>
+          <li class="contact">Contact</li>
+        </ul>
+      </nav>
+    </header>
+    <div class="about-section">
+      <div class="profile-container">
+        <img class="profile-pic" src="images/profilpic.jpeg" alt="Profile picture">
+      </div>
+      
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>Hi there! I'm a Junior Developer based in London, with a passion for creating clean, intuitive web experiences. With a background in marketing and a natural eye for design, I bring a unique perspective to development that bridges the gap between user needs and technical solutions. I specialize in crafting responsive websites and applications that not only function flawlessly but also engage and delight users.</p>        <div class="about-grid">
+          <div class="skill-box">
+            <h3>Frontend</h3>
+            <p>HTML, CSS, JavaScript, React.js</p>
+          </div>
+          <div class="skill-box">
+            <h3>Design</h3>
+            <p>Responsive Design, UI/UX, Figma</p>
+          </div>
+          <div class="skill-box">
+            <h3>Backend</h3>
+            <p>Node.js, API Integration</p>
+          </div>
+          <div class="skill-box">
+            <h3>Tools</h3>
+            <p>Git, VS Code, Chrome DevTools</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-section">
+      <h2>Portfolio</h2>
+      
+      <div class="carousel-container">
+        <!-- Loading State -->
+        <div class="loading-state">
+          <div class="loader"></div>
+          <p>Loading projects...</p>
+        </div>
+    
+        <!-- Error State -->
+        <div class="error-state hidden">
+          <p>Oops! Something went wrong loading the projects.</p>
+          <button class="retry-button">Try Again</button>
+        </div>
+    
+        <button class="carousel-button prev" disabled>←</button>
+        <div class="project-carousel"></div>
+        <button class="carousel-button next" disabled>→</button>
+      </div>
+    </div>
+    
+        <button class="carousel-button next">→</button>
+      </div>
+    </div>
+    </div>
+    <div class="blog-section">
+      <div class="blog-post1">
+        <h3>My Journey from Marketing to Code</h3>
+        <p>Three months ago, I made the leap from digital marketing to web development. Here's what I've learned about transferable skills, learning strategies, and the importance of community in tech...</p>
+        <a href="#" class="read-more">Read More →</a>
+      </div>
+      
+      <div class="blog-post2">
+        <h3>Building My First React Application</h3>
+        <p>A deep dive into my experience creating a weather application using React. From component architecture to API integration, here are the challenges I faced and how I overcame them...</p>
+        <a href="#" class="read-more">Read More →</a>
+      </div>
+      
+      <div class="blog-post3">
+        <h3>5 Essential Tools for Junior Developers</h3>
+        <p>Discovering the right development tools can significantly improve your workflow. Here are my top picks for version control, code editing, and debugging that every junior developer should know...</p>
+        <a href="#" class="read-more">Read More →</a>
+      </div>
+    </div>
+      <div class="contact-section">
+        <h2>Let's Connect!</h2>
+        <p>Interested in collaborating or just want to say hi?</p>
+        <form class="contact-form">
+          <input type="email" placeholder="Your email address..." required>
+          <textarea placeholder="Your message..." required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    <footer>
+      <div class="socials">
+        <p>Connect with me on:</p>
+        <ul class="social-links">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+      <p>© 2024 Nina Bertrand | Designed and built with ☕ in London</p>
+    </footer>
+    <script src="src/index.js"></script>
+  </body>
+</html>

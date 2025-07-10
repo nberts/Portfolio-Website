@@ -1,0 +1,11 @@
+projectImages.json
+{
+    "repository-name-1": {
+      "image": "/images/projects/project1.jpg",
+      "alt": "Project 1 screenshot"
+    },
+    "repository-name-2": {
+      "image": "/images/projects/project2.jpg",
+      "alt": "Project 2 screenshot"
+    }
+  }
