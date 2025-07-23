@@ -61,10 +61,29 @@ header {
 .titles h2 {
   font-family: var(--secondary-font);
   font-size: 1.4em;
-  margin: 5px 0 0 0;
+  margin: 0;
   font-weight: 300;
   color: var(--sage-light);
   letter-spacing: 0.5px;
+}
+
+.currently-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  color: var(--sage-light);
+  font-family: var(--secondary-font);
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.currently-list li {
+  margin-bottom: 5px;
+}
+
+.currently-list strong {
+  color: var(--pure-white);
+  font-weight: 400;
 }
 
 /* Navigation Styling */
