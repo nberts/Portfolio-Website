@@ -294,7 +294,7 @@ header {
   align-items: center;
   justify-content: space-between; /* This will push the links to the bottom */
   text-align: center;
-  border: 1px solid transparent;
+  border: 1px solid var(--charcoal);
   transition: all 0.3s ease;
 }
 
@@ -580,7 +580,7 @@ header {
 /* Contact Section */
 .contact-section {
   background-color: var(--sage);
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
   color: var(--pure-white);
 }
@@ -607,7 +607,7 @@ header {
 .contact-form textarea {
   width: 100%;
   padding: 15px;
-  border: none;
+  border: solid 1px var(--charcoal);
   border-radius: 4px;
   background: var(--pure-white);
   font-family: var(--secondary-font);
