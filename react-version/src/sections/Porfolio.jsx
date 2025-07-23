@@ -70,6 +70,8 @@ function Portfolio() {
             icon: '/icons/WeatherApp.svg'
         }
     }
+
+    const excludeRepos = ['🪴Personal'];
     
     const [projects, setProjects] = useState([]); //stores repo list
     const [isLoading, setIsLoading] = useState(true); // track loading
@@ -90,6 +92,7 @@ function Portfolio() {
 
                 const formattedProjects = data
                     .filter(repo => projectMetadata[repo.name])
+                    .filter(repo => !excludeRepos.includes(repo.name))
                     .map(repo => ({
                         id: repo.id,
                         name: repo.name,
