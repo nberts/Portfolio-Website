@@ -664,6 +664,12 @@ header {
   color: var(--charcoal);
 }
 
+.form-status {
+  margin-top: 20px;
+  font-weight: 500;
+  color: var(--pure-white);
+}
+
 /* Footer */
 footer {
   background-color: var(--charcoal);

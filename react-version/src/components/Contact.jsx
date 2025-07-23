@@ -3,14 +3,29 @@ import React, { useState } from "react";
 function Contact() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [status, setStatus] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        setStatus('Sending...')
 
-        console.log('Form submitted:', { email, message });
+        try {
+            const response = await fetch('https://formspree.io/f/mgvzapkr', { 
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, message }),
+            });
 
-        setEmail('');
-        setMessage('');
+            if (response.ok) {
+                setStatus('Thanks for your message!');
+                setEmail('');
+                setMessage('');
+            } else {
+                throw new Error('Network response was not ok.');
+            }
+        } catch (error) {
+            setStatus('Oops! There was a problem submitting your form.');
+        }
     };
 
     return (
@@ -32,8 +47,11 @@ function Contact() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
-                <button type="submit">Send Message</button>
+                <button type="submit" disabled={status === 'Sending...'}>
+                    {status === 'Sending...' ? 'Sending...' : 'Send Message'}
+                </button>
             </form>
+            {status && <p className="form-status">{status}</p>}
         </div>
     );
 }
