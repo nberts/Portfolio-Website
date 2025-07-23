@@ -695,11 +695,12 @@ footer {
   color: var(--sage-light);
   text-decoration: none;
   transition: color 0.3s ease;
-  font-weight: 500;
+  font-size: 1.8em;
 }
 
 .social-links a:hover {
   color: var(--pure-white);
+  transform: translateY(-2px);
 }
 
 /* Responsive Design */

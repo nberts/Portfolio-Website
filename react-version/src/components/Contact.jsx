@@ -24,6 +24,7 @@ function Contact() {
                 throw new Error('Network response was not ok.');
             }
         } catch (error) {
+            console.error("Form submission error:", error);
             setStatus('Oops! There was a problem submitting your form.');
         }
     };
