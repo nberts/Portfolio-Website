@@ -553,6 +553,10 @@ header {
   transition: color 0.3s ease;
 }
 
+.blog-post-card:hover h3 {
+  color: var(--sage);
+}
+
 .blog-post-card p {
   margin: 0;
   line-height: 1.5;
