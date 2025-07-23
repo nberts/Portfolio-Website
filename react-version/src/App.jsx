@@ -9,13 +9,12 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <About />
+      <div id='about'><About /></div>
       <div className='section-divider-div'></div>
-      <Portfolio />
+      <div id='portfolio'><Portfolio /></div>
       <div className='section-divider-div'></div>
-      <Blog />
-      <div className='section-divider-div'></div>
-      <Contact />
+      <div id='blog'><Blog /></div>
+      <div id='contact'><Contact /></div>
       <Footer />
     </div>
   );
