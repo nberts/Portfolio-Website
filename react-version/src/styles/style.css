@@ -89,6 +89,17 @@ header {
   gap: 10px;
 }
 
+.currently-list a {
+  color: var(--sage);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.currently-list a:hover {
+  color: var(--pure-white);
+  text-decoration: underline;
+}
+
 .currently-list:last-child {
   margin-bottom: 0;
 }

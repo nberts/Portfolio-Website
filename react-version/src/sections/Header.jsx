@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import { FaLaptopCode, FaBookOpen, FaHeadphones } from 'react-icons/fa';
 
 function Header() {
+    const [status, setStatus] = useState({
+        workingOn: { name: 'Loading...', url: null },
+        reading: 'Loading...',
+        listeningTo: 'Loading...'
+    });
+
+    useEffect(() => {
+        const fetchStatus = async () => {
+            try {
+                const response = await fetch('/api/status');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch status');
+                }
+                const data = await response.json();
+                setStatus(data);
+            } catch (error) {
+                console.error("Error fetchin status:", error);
+
+                setStatus({
+                    workingOn: 'Could not load data',
+                    reading: 'Could not load data',
+                    listeningTo: 'Could not load data'
+                });
+            }
+        };
+
+        fetchStatus();
+    }, []);
+
     return (
         <header>
             <div className='titles'>
@@ -13,15 +42,24 @@ function Header() {
                 <ul className='currently-list'>
                     <li>
                         <FaLaptopCode />
-                        <span><strong>Working on:</strong> A new React-based component library</span>
+                        <span>
+                            <strong>Working on:</strong>{' '}
+                            {status.workingOn && status.workingOn.url ? (
+                                <a href={status.workingOn.url} target="_blank" rel="noopener noreferrer">
+                                    {status.workingOn.name}
+                                </a>
+                            ) : (
+                                status.workingon?.name || 'Loading...' 
+                            )}
+                        </span>
                     </li>
                     <li>
                         <FaBookOpen />
-                        <span><strong>Reading:</strong> House of Salt & Sorrows by Erin A. Craig</span>
+                        <span><strong>Reading:</strong> {status.reading}</span>
                     </li>
                     <li>
                         <FaHeadphones />
-                        <span><strong>Listening to:</strong> Lo-fi study beats.</span>
+                        <span><strong>Listening to:</strong> {status.listeningTo}</span>
                     </li>
                 </ul>
             </div>
