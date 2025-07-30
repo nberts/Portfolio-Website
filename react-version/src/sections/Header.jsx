@@ -4,7 +4,7 @@ import { FaLaptopCode, FaBookOpen, FaHeadphones } from 'react-icons/fa';
 function Header() {
     const [status, setStatus] = useState({
         workingOn: { name: 'Loading...', url: null },
-        reading: 'Loading...',
+        reading: {name: 'Loading...', url: null},
         listeningTo: 'Loading...'
     });
 
@@ -18,11 +18,11 @@ function Header() {
                 const data = await response.json();
                 setStatus(data);
             } catch (error) {
-                console.error("Error fetchin status:", error);
+                console.error("Error fetching status:", error);
 
                 setStatus({
-                    workingOn: 'Could not load data',
-                    reading: 'Could not load data',
+                    workingOn: { name: 'Could not load data', url: null},
+                    reading: { name: 'Could not load data', url: null},
                     listeningTo: 'Could not load data'
                 });
             }
@@ -49,13 +49,22 @@ function Header() {
                                     {status.workingOn.name}
                                 </a>
                             ) : (
-                                status.workingon?.name || 'Loading...' 
+                                status.workingOn?.name || 'Loading...' 
                             )}
                         </span>
                     </li>
                     <li>
                         <FaBookOpen />
-                        <span><strong>Reading:</strong> {status.reading}</span>
+                        <span>
+                            <strong>Reading:</strong>{' '} 
+                            {status.reading && status.reading.url ? (
+                                <a href={status.reading.url} target="_blank" rel="noopener noreferrer">
+                                    {status.reading.text}
+                                </a>
+                            ) : (
+                                typeof status.reading.text || 'Loading...'
+                            )}
+                        </span>
                     </li>
                     <li>
                         <FaHeadphones />
