@@ -945,9 +945,9 @@ main {
     padding: 10px 5px;
   }
   
-    .project-card-new {
-    min-width: 200px; /* Much narrower */
-    max-width: 220px; /* Cap width */
+  .project-card-new {
+    min-width: 100px; /* Much narrower */
+    max-width: 150px; /* Cap width */
     height: 320px; /* Taller for better proportions */
     padding: 20px 15px; /* Less horizontal padding */
     flex-basis: auto;
