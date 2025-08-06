@@ -29,7 +29,7 @@ function Footer() {
                     </li>
                 </ul>
             </div>
-            <p>© {new Date().getFullYear()} Nina Bertrand | Designed & build with ☕ in London</p>
+            <p>© {new Date().getFullYear()} Nina Bertrand | Designed & build with ☕ in Ottawa</p>
         </footer>
     );
 }
