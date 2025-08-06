@@ -1,6 +1,6 @@
 export default function handler(req, res) {
     const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
-    const redirect_uri = 'https://nina-portfolio.vercel.app/api/spotify-callback';
+    const redirect_uri = 'https://nina-portfolio-ecru.vercel.app/api/spotify-callback';
 
     const scopes = 'user-read-recently-played';
 

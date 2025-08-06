@@ -2,7 +2,7 @@ export default async function handler(req, res) {
     const {code } = req.query;
     const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
     const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
-    const redirect_uri = 'https://nina-portfolio.vercel.app/api/spotify-callback';
+    const redirect_uri = 'https://nina-portfolio-ecru.vercel.app/api/spotify-callback';
 
     try {
         const response = await fetch('https://accounts.spotify.com/api/token', {
