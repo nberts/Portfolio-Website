@@ -919,13 +919,13 @@ main {
     grid-template-columns: 1fr;
   }
 
-    .carousel-container {
-    padding: 20px 40px; /* Reduce side padding for arrows */
-    max-width: 95%; /* Use more screen width */
+.carousel-container {
+    padding: 20px 40px;
+    max-width: 95%;
   }
   
   .carousel-button {
-    width: 32px;  /* Smaller buttons */
+    width: 32px;
     height: 32px;
     font-size: 0.9rem;
   }
@@ -939,39 +939,45 @@ main {
   }
   
   .project-carousel {
-    gap: 15px; /* Smaller gap between cards */
+    gap: 15px;
     padding: 10px 5px;
   }
   
   .project-card-new {
-    min-width: 85vw; /* Cards take up 85% of viewport width */
-    max-width: 320px; /* But don't get too big */
-    height: 220px; /* Slightly shorter */
-    padding: 20px 15px;
+    min-width: 220px; /* Much narrower */
+    max-width: 250px; /* Cap the maximum width */
+    height: 300px; /* Taller to compensate */
+    padding: 25px 20px;
+    flex-basis: auto; /* Remove the flex-basis */
   }
   
   .project-icon-container {
-    width: 60px;  /* Smaller icon container */
-    height: 60px;
-    margin-bottom: 15px;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
   }
   
   .project-title-new {
-    font-size: 1.3em; /* Smaller title */
-    height: 50px;
+    font-size: 1.3em;
+    height: auto;
+    margin-bottom: 15px;
   }
   
   .project-description-new {
-    font-size: 0.8em; /* Smaller description */
-    height: 40px;
+    font-size: 0.85em;
+    height: auto;
+    flex-grow: 1;
+    -webkit-line-clamp: 4; /* Can show more lines since card is taller */
+    margin-bottom: 20px;
   }
   
   .project-links-new {
-    padding: 4px;
+    padding: 5px;
+    flex-shrink: 0;
   }
   
   .project-links-new a {
-    padding: 6px 12px; /* Smaller buttons */
+    padding: 8px 12px;
     font-size: 0.85rem;
   }
 }
@@ -1004,59 +1010,39 @@ main {
   }
 
   .carousel-container {
-    padding: 20px 40px; /* Reduce side padding for arrows */
-    max-width: 95%; /* Use more screen width */
+    padding: 15px 30px;
+    max-width: 100%;
   }
   
   .carousel-button {
-    width: 32px;  /* Smaller buttons */
-    height: 32px;
-    font-size: 0.9rem;
-  }
-  
-  .carousel-button.prev {
-    left: 0;
-  }
-  
-  .carousel-button.next {
-    right: 0;
-  }
-  
-  .project-carousel {
-    gap: 15px; /* Smaller gap between cards */
-    padding: 10px 5px;
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
   }
   
   .project-card-new {
-    min-width: 85vw; /* Cards take up 85% of viewport width */
-    max-width: 320px; /* But don't get too big */
-    height: 220px; /* Slightly shorter */
-    padding: 20px 15px;
+    min-width: 200px; /* Even narrower on small phones */
+    max-width: 220px;
+    height: 280px;
   }
   
   .project-icon-container {
-    width: 60px;  /* Smaller icon container */
+    width: 60px;
     height: 60px;
-    margin-bottom: 15px;
   }
   
   .project-title-new {
-    font-size: 1.3em; /* Smaller title */
-    height: 50px;
+    font-size: 1.2em;
   }
   
   .project-description-new {
-    font-size: 0.8em; /* Smaller description */
-    height: 40px;
-  }
-  
-  .project-links-new {
-    padding: 4px;
+    font-size: 0.8em;
+    -webkit-line-clamp: 3;
   }
   
   .project-links-new a {
-    padding: 6px 12px; /* Smaller buttons */
-    font-size: 0.85rem;
+    padding: 6px 10px;
+    font-size: 0.8rem;
   }
 }
 
