@@ -46,9 +46,6 @@ header {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   background-color: var(--charcoal);
   padding: 1.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
 /* Desktop header layout */
@@ -57,9 +54,106 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem 3rem;
+  }
+  
+  /* Left side - title and currently list */
+  .titles {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 0;
+  }
+  
+  .title-main {
+    flex-shrink: 0;
+  }
+  
+  .titles h1 {
+    font-size: 3.5em;
+    margin: 0;
+    color: var(--pure-white);
+  }
+  
+  .titles h2 {
+    font-size: 1.4em;
+    margin: 0;
+    font-weight: 300;
+    color: var(--sage-light);
+    letter-spacing: 0.5px;
+  }
+  
+  .currently-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--sage-light);
+    font-family: var(--secondary-font);
+    font-size: 0.9em;
+    font-weight: 300;
+    border-left: 1px solid var(--sage);
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .currently-list li {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+  }
+  
+  /* Right side - navigation */
+  .page-menu {
+    margin-top: 0;
+  }
+  
+  .page-menu .menu {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu a {
+    color: var(--sage-light);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+    text-decoration: none;
+  }
+  
+  .menu li {
+    position: relative;
+  }
+  
+  .menu li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--sage);
+    transition: width 0.3s ease;
+  }
+  
+  .menu li:hover {
+    color: var(--pure-white);
+  }
+  
+  .menu li:hover::after {
+    width: 100%;
   }
 }
 
+/* Default mobile-first styles */
 .titles {
   position: relative;
   z-index: 1;
@@ -753,102 +847,6 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-}
-
-/* Desktop header layout */
-@media (min-width: 769px) {
-  header {
-    padding: 2rem 3rem;
-  }
-  
-  /* Header top section with title and currently list */
-  .titles {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0;
-    flex-wrap: nowrap;
-    gap: 3rem;
-  }
-  
-  .title-main {
-    flex-shrink: 0;
-  }
-  
-  .titles h1 {
-    font-size: 3.5em;
-  }
-  
-  .titles h2 {
-    font-size: 1.4em;
-  }
-  
-  .currently-list {
-    flex-direction: column;
-    gap: 0.8rem;
-    border-left: 1px solid var(--sage);
-    padding-left: 30px;
-    font-size: 0.9em;
-  }
-  
-  .currently-list li {
-    margin-bottom: 0;
-  }
-  
-  /* Navigation menu */
-  .page-menu {
-    margin-top: 0;
-  }
-  
-  .page-menu .menu {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .menu a {
-    color: var(--sage-light);
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    padding-bottom: 5px;
-    text-decoration: none;
-  }
-  
-  .menu li {
-    position: relative;
-  }
-  
-  .menu li::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--sage);
-    transition: width 0.3s ease;
-  }
-  
-  .menu li:hover::after {
-    width: 100%;
-  }
-}
-
-/* Remove the general titles styles that were interfering */
-.titles {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
 }
 
 /* Tablet 768px - 1024px */
