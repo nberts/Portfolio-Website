@@ -126,10 +126,10 @@ async function getSpotifyRecentAlbum() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': `Basic ${Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString}('base64')}`
+        'Authorization': `Basic ${Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString('base64')}`
       },
       body: new URLSearchParams({
-        grant_type: 'refresh-token',
+        grant_type: 'refresh_token',
         refresh_token: SPOTIFY_REFRESH_TOKEN
       })
     });
@@ -148,7 +148,7 @@ async function getSpotifyRecentAlbum() {
 
       if (data.items && data.items.length > 0) {
         const track = data.items[0].track;
-        const albumName = data.album.name;
+        const albumName = track.album.name;
         const artistName = track.album.artists[0].name;
         return `${albumName} by ${artistName}`;
       }
