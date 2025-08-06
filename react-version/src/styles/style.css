@@ -196,7 +196,7 @@ header {
   border-left: 1px solid var(--sage);
   padding-left: 30px;
   display: flex;
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
 
 .currently-list li {
