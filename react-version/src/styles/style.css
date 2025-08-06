@@ -792,6 +792,7 @@ main {
 @media (max-width: 768px) {
   header {
     padding: 0;
+    position: sticky;
     background-color: var(--charcoal);
     display: block;
     position: relative; /* Change from sticky */
@@ -811,7 +812,6 @@ main {
 
   /* Navigation menu - MAKE THIS STICKY */
   .page-menu {
-    position: sticky;
     top: 0;
     background-color: var(--charcoal);
     z-index: 1000;
@@ -1025,8 +1025,8 @@ main {
   }
   
   .project-card-new {
-    min-width: 180px; /* Even narrower */
-    max-width: 200px;
+    min-width: 100px; /* Even narrower */
+    max-width: 120px;
     height: 300px;
   }
   
