@@ -68,7 +68,16 @@ function Header() {
                     </li>
                     <li>
                         <FaHeadphones />
-                        <span><strong>Listening to:</strong> {status.listeningTo}</span>
+                        <span>
+                            <strong>Listening to:</strong> {' '}
+                            {status.listeningTo && status.listeningTo.url ? (
+                                <a href={status.listeningTo.url} target="_blank" rel="noopener noreferrer">
+                                    {status.listeningTo.text}
+                                </a>
+                            ) : (
+                                typeof status.listeningTo === 'string' ? status.listeningTo : status.listeningTo?.text || 'Loading...'
+                            )}                            
+                        </span>
                     </li>
                 </ul>
             </div>

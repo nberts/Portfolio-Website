@@ -150,14 +150,23 @@ async function getSpotifyRecentAlbum() {
         const track = data.items[0].track;
         const albumName = track.album.name;
         const artistName = track.album.artists[0].name;
-        return `${albumName} by ${artistName}`;
+        const albumURL = track.album.external_urls.spotify;
+
+        return {
+          text: `${albumName} by ${artistName}`,
+          url: albumURL
+        };
+
       }
     }
   } catch (error) {
     console.error("Error fetching Spotify data:", error);
   }
 
-  return "some great music";
+  return {
+    text: "some great music",
+    url: null
+  }; 
 }
 
 // Main handler function
