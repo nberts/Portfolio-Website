@@ -22,7 +22,7 @@ body {
   background-color: var(--primary-white);
   margin: 0;
   font-family: var(--secondary-font);
-  line-height: 1.2;
+  line-height: 1.4;
   color: var(--charcoal);
   overflow-x: hidden;
 }
@@ -54,7 +54,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 3rem;
+    padding: 3rem 3.5rem;
   }
   
   /* Left side - title and currently list */
