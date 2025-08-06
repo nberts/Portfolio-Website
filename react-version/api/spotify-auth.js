@@ -8,7 +8,8 @@ export default function handler(req, res) {
         `client_id=${SPOTIFY_CLIENT_ID}` +
         `&response_type=code` +
         `&redirect_uri=${encodeURIComponent(redirect_uri)}` +
-        `&scope=${encodeURIComponent(scopes)}`;
+        `&scope=${encodeURIComponent(scopes)}` +
+        `&show_dialog=true`;
 
     console.log('Redirecting to:', authURL)
     res.redirect(authURL);
