@@ -343,7 +343,7 @@ header {
   background-color: var(--sage-light);
   border-radius: 15px;
   padding: 25px 20px;
-  min-width: 280px; 
+  min-width: 280px;
   height: 250px;    
   display: flex;
   flex-direction: column;
@@ -351,7 +351,7 @@ header {
   flex-basis: 300px;
   scroll-snap-align: start;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   text-align: center;
   border: 1px solid var(--charcoal);
   transition: all 0.3s ease;
@@ -374,7 +374,7 @@ header {
 }
 
 .project-icon-container img {
-  width: 60%; 
+  width: 60%;
   height: 60%;
   object-fit: contain;
 }
@@ -791,35 +791,26 @@ main {
 /* Mobile max 768px */
 @media (max-width: 768px) {
   header {
-    padding: 0;
+    padding: 1rem;
     position: sticky;
+    top: 0;
     background-color: var(--charcoal);
     display: block;
-    position: relative; /* Change from sticky */
   }
 
-  /* Header content wrapper - NOT sticky */
+  /* Header content wrapper */
   .titles {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     gap: 1rem;
-    padding: 1rem;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* Navigation menu - MAKE THIS STICKY */
-  .page-menu {
-    top: 0;
-    background-color: var(--charcoal);
-    z-index: 1000;
-    padding: 0.75rem 1rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-
-  /* Rest of mobile header styles remain the same */
+  /* Rest of mobile header styles */
   .title-main {
     flex: 0 0 auto;
   }
@@ -869,6 +860,11 @@ main {
     opacity: 0.7;
   }
 
+  .page-menu {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
   .page-menu .menu {
     display: flex;
     justify-content: space-around;
@@ -897,12 +893,6 @@ main {
     opacity: 0.9;
   }
 
-  .page-menu .menu a:hover,
-  .page-menu .menu a:active {
-    opacity: 1;
-    color: var(--pure-white);
-  }
-
   main {
     padding: 1rem;
   }
@@ -921,68 +911,81 @@ main {
     grid-template-columns: 1fr;
   }
 
-.carousel-container {
+  /* PROJECT CARDS - MOBILE */
+  .carousel-container {
     padding: 20px 40px;
     max-width: 95%;
   }
-  
+
   .carousel-button {
     width: 32px;
     height: 32px;
     font-size: 0.9rem;
   }
-  
+
   .carousel-button.prev {
     left: 0;
   }
-  
+
   .carousel-button.next {
     right: 0;
   }
-  
+
   .project-carousel {
     gap: 15px;
     padding: 10px 5px;
   }
-  
+
+  /* IMPORTANT: Override the default project card styles */
   .project-card-new {
-    min-width: 100px; /* Much narrower */
-    max-width: 150px; /* Cap width */
-    height: 320px; /* Taller for better proportions */
-    padding: 20px 15px; /* Less horizontal padding */
-    flex-basis: auto;
+    min-width: 200px !important;
+    max-width: 220px !important;
+    width: 200px !important;
+    height: 320px !important;
+    padding: 20px 15px !important;
+    flex-basis: auto !important;
   }
-  
+
   .project-icon-container {
-    width: 60px; /* Smaller icon */
+    width: 60px;
     height: 60px;
     margin-bottom: 15px;
   }
-  
+
   .project-title-new {
     font-size: 1.2em;
     height: auto;
     margin-bottom: 10px;
-    padding: 0 10px; /* Add some padding */
+    padding: 0 5px;
   }
-  
+
   .project-description-new {
     font-size: 0.8em;
     height: auto;
     flex-grow: 1;
-    padding: 0 10px; /* Add some padding */
+    padding: 0 5px;
     -webkit-line-clamp: 4;
     margin-bottom: 15px;
   }
-  
+
   .project-links-new {
     padding: 4px;
     flex-shrink: 0;
   }
-  
+
   .project-links-new a {
     padding: 6px 10px;
     font-size: 0.8rem;
+  }
+
+  /* Contact form responsive */
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+  }
+
+  .contact-form button {
+    width: 100%;
   }
 }
 
@@ -1017,35 +1020,43 @@ main {
     padding: 15px 30px;
     max-width: 100%;
   }
-  
+
   .carousel-button {
     width: 28px;
     height: 28px;
     font-size: 0.8rem;
   }
-  
+
+  /* Force narrower cards on small phones */
   .project-card-new {
-    min-width: 100px; /* Even narrower */
-    max-width: 120px;
-    height: 300px;
+    min-width: 180px !important;
+    max-width: 200px !important;
+    width: 180px !important;
+    height: 300px !important;
   }
-  
+
   .project-icon-container {
     width: 50px;
     height: 50px;
   }
-  
+
   .project-title-new {
     font-size: 1.1em;
   }
-  
+
   .project-description-new {
     font-size: 0.75em;
   }
-  
+
   .project-links-new a {
-    padding: 6px 10px;
+    padding: 5px 10px;
     font-size: 0.8rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 16px;
   }
 }
 
@@ -1058,57 +1069,6 @@ main {
 
 .currently-list a:hover {
   border-bottom-style: solid;
-}
-
-/* Contact form responsive */
-.contact-form input,
-.contact-form textarea {
-  font-size: 16px; /* Prevents zoom on iOS */
-}
-
-.contact-form button {
-  width: 100%;
-}
-
-@media (max-width: 480px) {
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form button {
-    font-size: 16px; /* Consistent sizing */
-  }
-  .carousel-container {
-    padding: 15px 35px;
-    max-width: 100%;
-  }
-  
-  .carousel-button {
-    width: 28px;
-    height: 28px;
-    font-size: 0.8rem;
-  }
-  
-  .project-card-new {
-    min-width: 90vw; /* Take up more space on very small screens */
-    height: 200px;
-  }
-  
-  .project-icon-container {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .project-title-new {
-    font-size: 1.2em;
-  }
-  
-  .project-description-new {
-    font-size: 0.75em;
-  }
-  
-  .project-links-new a {
-    padding: 5px 10px;
-    font-size: 0.8rem;
-  }
 }
 
 @media (min-width: 769px) and (max-width: 900px) {
