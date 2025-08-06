@@ -110,6 +110,56 @@ async function getCurrentlyReading() {
   };
 }
 
+// get recently played album from Spotify
+async function getSpotifyRecentAlbum() {
+  const SPOTIFY_REFRESH_TOKEN = process.env.SPOTIFY_REFRESH_TOKEN;
+  const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+  const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
+
+  if (!SPOTIFY_REFRESH_TOKEN) {
+    return "some great music";
+  }
+
+  try {
+    //Get Access token
+    const tokenResponse = await fetch('https://accounts.spotify.com/api/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': `Basic ${Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString}('base64')}`
+      },
+      body: new URLSearchParams({
+        grant_type: 'refresh-token',
+        refresh_token: SPOTIFY_REFRESH_TOKEN
+      })
+    });
+
+    const { access_token } = await tokenResponse.json();
+
+    //get recently played
+    const recentResponse = await fetch('https://api.spotify.com/v1/me/player/recently-played?limit=10', {
+      headers: {
+        'Authorization': `Bearer ${access_token}`
+      }
+    });
+
+    if (recentResponse.ok) {
+      const data = await recentResponse.json();
+
+      if (data.items && data.items.length > 0) {
+        const track = data.items[0].track;
+        const albumName = data.album.name;
+        const artistName = track.album.artists[0].name;
+        return `${albumName} by ${artistName}`;
+      }
+    }
+  } catch (error) {
+    console.error("Error fetching Spotify data:", error);
+  }
+
+  return "some great music";
+}
+
 // Main handler function
 export default async function handler(req, res) {
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
@@ -148,6 +198,8 @@ export default async function handler(req, res) {
   reading = await getCurrentlyReading();
   console.log('Final reading data:', reading);
   
+  listeningTo = await getSpotifyRecentAlbum();
+
   // Return all data
   res.status(200).json({
     workingOn,
