@@ -182,7 +182,7 @@ header {
   margin: 0;
   font-weight: 300;
   color: var(--sage-light);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.2px;
 }
 
 .currently-list {
@@ -200,7 +200,7 @@ header {
 }
 
 .currently-list li {
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
   display: flex;
   align-items: center;
   gap: 0.3rem;
