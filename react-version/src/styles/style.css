@@ -24,6 +24,7 @@ body {
   font-family: var(--secondary-font);
   line-height: 1.6;
   color: var(--charcoal);
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -45,9 +46,15 @@ header {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   background-color: var(--charcoal);
   padding: 1.5rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+}
+
+/* Desktop header layout */
+@media (min-width: 769px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .titles {
@@ -268,30 +275,6 @@ header {
   font-size: 0.9em;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .about-section {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .profile-container {
-    width: 250px;
-    margin: 0 auto;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-  }
-}
-
 /* Portfolio Section */
 .portfolio-section > h2 {
   font-size: 2.5em;
@@ -357,7 +340,7 @@ header {
 
 /* New Project Card Styles from React Re-Formatting */
 .project-card-new {
-  background-color: var(--sage-light); 
+  background-color: var(--sage-light);
   border-radius: 15px;
   padding: 25px 20px;
   min-width: 280px; /* Adjust as needed */
@@ -382,7 +365,7 @@ header {
 .project-icon-container {
   width: 80px;
   height: 80px;
-  background-color: var(--charcoal); 
+  background-color: var(--charcoal);
   border-radius: 80%;
   display: flex;
   justify-content: center;
@@ -397,7 +380,7 @@ header {
 }
 
 .project-title-new {
-  font-family: var(--primary-font); 
+  font-family: var(--primary-font);
   font-size: 1.5em;
   color: var(--charcoal);
   margin: 0;
@@ -409,7 +392,7 @@ header {
 }
 
 .project-description-new {
-  font-family: var(--secondary-font); 
+  font-family: var(--secondary-font);
   font-size: 0.85em;
   color: var(--charcoal);
   line-height: 1.4;
@@ -424,9 +407,9 @@ header {
 .project-links-new {
   display: flex;
   gap: 10px;
-  background-color: var(--charcoal); 
+  background-color: var(--charcoal);
   padding: 5px;
-  border-radius: 50px; 
+  border-radius: 50px;
 }
 
 .project-links-new a {
@@ -757,17 +740,9 @@ footer {
   transform: translateY(-2px);
 }
 
-/* Responsive Design */
-
 /* General responsive */
 * {
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
 }
 
 /* Responsive sections */
@@ -777,26 +752,10 @@ main {
   padding: 2rem;
 }
 
-@media (max-width: 768px) {
-  main {
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  main {
-    padding: 0.75rem;
-  }
-}
-
 /* Tablet 768px - 1024px */
 @media (max-width: 1024px) {
   header {
     padding: 1.2rem 1.5rem;
-  }
-
-  .title {
-    gap: 1.5rem;
   }
 
   .currently-list {
@@ -830,14 +789,14 @@ main {
 }
 
 /* Mobile max 768px */
-/* Mobile-specific header layout */
 @media (max-width: 768px) {
   header {
     padding: 1rem;
-    background-color: #1a1a1a;
+    background-color: var(--charcoal);
+    display: block; /* Stack elements vertically */
   }
 
-  /* Main container for header content */
+  /* Header content wrapper */
   .titles {
     display: flex;
     flex-direction: row;
@@ -845,17 +804,20 @@ main {
     align-items: flex-start;
     gap: 1rem;
     margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   /* Left side - Name and title */
   .title-main {
-    flex: 1;
+    flex: 0 0 auto;
   }
 
   .title-main h1 {
     font-size: 1.5rem;
     margin: 0;
     line-height: 1.2;
+    color: var(--pure-white);
   }
 
   .title-main h2 {
@@ -867,12 +829,14 @@ main {
 
   /* Right side - Currently status */
   .currently-list {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     list-style: none;
     padding: 0;
+    padding-left: 0; /* Remove the left padding */
+    border-left: none; /* Remove the border */
     margin: 0;
     font-size: 0.75rem;
     text-align: right;
@@ -883,6 +847,7 @@ main {
     align-items: center;
     justify-content: flex-end;
     gap: 0.5rem;
+    margin-bottom: 0;
   }
 
   /* Hide the text labels on mobile */
@@ -896,10 +861,10 @@ main {
     opacity: 0.7;
   }
 
-  /* Navigation menu - horizontal below header */
+  /* Navigation menu - horizontal below header content */
   .page-menu {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 0.75rem;
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .page-menu .menu {
@@ -914,6 +879,11 @@ main {
   .page-menu .menu li {
     flex: 1;
     text-align: center;
+    position: relative;
+  }
+
+  .page-menu .menu li::after {
+    display: none; /* Hide the hover underline on mobile */
   }
 
   .page-menu .menu a {
@@ -921,13 +891,32 @@ main {
     padding: 0.5rem 0.25rem;
     font-size: 0.875rem;
     text-decoration: none;
-    color: inherit;
-    opacity: 0.8;
+    color: var(--sage-light);
+    opacity: 0.9;
   }
 
   .page-menu .menu a:hover,
   .page-menu .menu a:active {
     opacity: 1;
+    color: var(--pure-white);
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .profile-container {
+    width: 250px;
+    margin: 0 auto;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -945,8 +934,17 @@ main {
     font-size: 0.7rem;
   }
 
+  .currently-list li {
+    gap: 0.3rem;
+  }
+
   .page-menu .menu a {
     font-size: 0.75rem;
+    padding: 0.4rem 0.2rem;
+  }
+
+  main {
+    padding: 0.75rem;
   }
 }
 
@@ -962,24 +960,13 @@ main {
 }
 
 /* Contact form responsive */
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  width: 100%;
-}
-
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
   font-size: 16px; /* Prevents zoom on iOS */
 }
 
 .contact-form button {
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
 }
 
 @media (max-width: 480px) {
@@ -987,5 +974,12 @@ main {
   .contact-form textarea,
   .contact-form button {
     font-size: 16px; /* Consistent sizing */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
 }
