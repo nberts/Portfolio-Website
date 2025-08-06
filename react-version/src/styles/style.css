@@ -95,7 +95,7 @@ header {
     padding-left: 30px;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.5rem;
   }
   
   .currently-list li {
@@ -1035,10 +1035,10 @@ main {
 
   /* IMPORTANT: Override the default project card styles */
   .project-card-new {
-    min-width: 200px !important;
+    min-width: 220px !important;
     max-width: 220px !important;
     width: 200px !important;
-    height: 320px !important;
+    height: 200px !important;
     padding: 20px 15px !important;
     flex-basis: auto !important;
   }
