@@ -343,15 +343,15 @@ header {
   background-color: var(--sage-light);
   border-radius: 15px;
   padding: 25px 20px;
-  min-width: 280px; /* Adjust as needed */
-  height: 250px;    /* Giving it a fixed height for consistency */
+  min-width: 280px; 
+  height: 250px;    
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
   flex-basis: 300px;
   scroll-snap-align: start;
   align-items: center;
-  justify-content: space-between; /* This will push the links to the bottom */
+  justify-content: space-between; 
   text-align: center;
   border: 1px solid var(--charcoal);
   transition: all 0.3s ease;
@@ -374,7 +374,7 @@ header {
 }
 
 .project-icon-container img {
-  width: 60%; /* Adjust size of icon inside the circle */
+  width: 60%; 
   height: 60%;
   object-fit: contain;
 }
@@ -835,8 +835,8 @@ main {
     gap: 0.5rem;
     list-style: none;
     padding: 0;
-    padding-left: 0; /* Remove the left padding */
-    border-left: none; /* Remove the border */
+    padding-left: 0; 
+    border-left: none; 
     margin: 0;
     font-size: 0.75rem;
     text-align: right;
@@ -918,6 +918,62 @@ main {
   .about-grid {
     grid-template-columns: 1fr;
   }
+
+    .carousel-container {
+    padding: 20px 40px; /* Reduce side padding for arrows */
+    max-width: 95%; /* Use more screen width */
+  }
+  
+  .carousel-button {
+    width: 32px;  /* Smaller buttons */
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  
+  .carousel-button.prev {
+    left: 0;
+  }
+  
+  .carousel-button.next {
+    right: 0;
+  }
+  
+  .project-carousel {
+    gap: 15px; /* Smaller gap between cards */
+    padding: 10px 5px;
+  }
+  
+  .project-card-new {
+    min-width: 85vw; /* Cards take up 85% of viewport width */
+    max-width: 320px; /* But don't get too big */
+    height: 220px; /* Slightly shorter */
+    padding: 20px 15px;
+  }
+  
+  .project-icon-container {
+    width: 60px;  /* Smaller icon container */
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .project-title-new {
+    font-size: 1.3em; /* Smaller title */
+    height: 50px;
+  }
+  
+  .project-description-new {
+    font-size: 0.8em; /* Smaller description */
+    height: 40px;
+  }
+  
+  .project-links-new {
+    padding: 4px;
+  }
+  
+  .project-links-new a {
+    padding: 6px 12px; /* Smaller buttons */
+    font-size: 0.85rem;
+  }
 }
 
 /* Even smaller phones */
@@ -945,6 +1001,62 @@ main {
 
   main {
     padding: 0.75rem;
+  }
+
+  .carousel-container {
+    padding: 20px 40px; /* Reduce side padding for arrows */
+    max-width: 95%; /* Use more screen width */
+  }
+  
+  .carousel-button {
+    width: 32px;  /* Smaller buttons */
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  
+  .carousel-button.prev {
+    left: 0;
+  }
+  
+  .carousel-button.next {
+    right: 0;
+  }
+  
+  .project-carousel {
+    gap: 15px; /* Smaller gap between cards */
+    padding: 10px 5px;
+  }
+  
+  .project-card-new {
+    min-width: 85vw; /* Cards take up 85% of viewport width */
+    max-width: 320px; /* But don't get too big */
+    height: 220px; /* Slightly shorter */
+    padding: 20px 15px;
+  }
+  
+  .project-icon-container {
+    width: 60px;  /* Smaller icon container */
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .project-title-new {
+    font-size: 1.3em; /* Smaller title */
+    height: 50px;
+  }
+  
+  .project-description-new {
+    font-size: 0.8em; /* Smaller description */
+    height: 40px;
+  }
+  
+  .project-links-new {
+    padding: 4px;
+  }
+  
+  .project-links-new a {
+    padding: 6px 12px; /* Smaller buttons */
+    font-size: 0.85rem;
   }
 }
 
@@ -974,6 +1086,39 @@ main {
   .contact-form textarea,
   .contact-form button {
     font-size: 16px; /* Consistent sizing */
+  }
+  .carousel-container {
+    padding: 15px 35px;
+    max-width: 100%;
+  }
+  
+  .carousel-button {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  
+  .project-card-new {
+    min-width: 90vw; /* Take up more space on very small screens */
+    height: 200px;
+  }
+  
+  .project-icon-container {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .project-title-new {
+    font-size: 1.2em;
+  }
+  
+  .project-description-new {
+    font-size: 0.75em;
+  }
+  
+  .project-links-new a {
+    padding: 5px 10px;
+    font-size: 0.8rem;
   }
 }
 
