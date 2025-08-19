@@ -1,4 +1,5 @@
 🌐 Personal Portfolio – Nina Bertrand 
+
 This is my personal developer portfolio, built with React (Vite) and deployed on Vercel. The goal of this site is not only to showcase my projects, but also to share a bit about myself — what I’m currently reading, listening to, and working on. 
 
 
@@ -55,3 +56,4 @@ Check out the full site 👉 ninabsavage.ca
 
 ✨ Fun note: When this project finally worked, my 8-year-old’s review was simply: "Cool."
 (For the record: it’s way cooler than that!) 
+
