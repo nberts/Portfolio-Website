@@ -188,14 +188,10 @@ export default async function handler(req, res) {
       }
     });
     
-    if (!response.ok) {
-      console.error('GitHub API failed:', response.status, await response.text());
-    }
-
     if (response.ok) {
       const events = await response.json();
       const pushEvent = events.find(event => event.type === 'PushEvent');
-      
+
       if (pushEvent) {
         workingOn = {
           name: formatRepoName(pushEvent.repo.name),
