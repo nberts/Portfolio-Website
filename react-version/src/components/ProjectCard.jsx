@@ -3,7 +3,7 @@ import React from "react";
 const formatRepoName = (name) => {
     const words = name.split(/(?=[A-Z])|[-_]/);
 
-    const acronyms = ["AI", "UI", "API"];
+    const acronyms = ["AI", "UI", "API", "CSS", "HTML"];
     
     return words
     .map(word => {
