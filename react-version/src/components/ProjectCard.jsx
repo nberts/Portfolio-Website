@@ -1,16 +1,14 @@
 import React from "react";
 
 const formatRepoName = (name) => {
-    const words = name.split(/[-_]|(?=[A-Z] [a-z])|/);
+    const words = name.split(/[-_]/);
 
     const acronyms = ["AI", "UI", "API", "CSS", "HTML"];
     
     return words
-    .filter(Boolean)
     .map((word) => {
-        const upper = word.toUpperCase();
-        if (acronyms.includes(upper)) {
-            return upper;
+        if (acronyms.includes(word.toUpperCase())) {
+            return word.toUpperCase();
         }
         return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
     })
