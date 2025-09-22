@@ -3,6 +3,10 @@ import ProjectCard from "../components/ProjectCard";
 
 function Portfolio() {
     const projectMetadata = {
+        "AI-travel-planner": {
+            icon: '/icons/travel.svg'
+        },
+        
         "Portfolio-Website": {
             icon: '/icons/PersonalWebsite.svg'
         },
