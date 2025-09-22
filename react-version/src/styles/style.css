@@ -567,7 +567,7 @@ header {
 .repo-link, .launch-link {
   color: var(--pure-white);
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 10px 10px;
   border: 1px solid var(--sage);
   border-radius: 4px;
   transition: all 0.3s ease;
