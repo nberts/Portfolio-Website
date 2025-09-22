@@ -4,7 +4,7 @@ const formatRepoName = (name) => {
 
     let withSpaces = name.replace(/[-_]/g, " ");
 
-    withSpaces = withSpaces.replace(/([a-z])(A-Z)/g, "$1 $2");
+    withSpaces = withSpaces.replace(/([a-z])([A-Z])/g, "$1 $2");
 
     const acronyms = ["AI", "UI", "API", "CSS", "HTML"];
     
