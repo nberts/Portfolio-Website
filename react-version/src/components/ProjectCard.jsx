@@ -2,9 +2,18 @@ import React from "react";
 
 const formatRepoName = (name) => {
     const words = name.split(/(?=[A-Z])|[-_]/);
+
+    const acronyms = ["AI", "UI", "API"];
+    
     return words
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+    .map(word => {
+        const upper = word.toUpperCase();
+        if (acronyms.includes(upper)) {
+            return upper;
+        }
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(" ");
 }
 
 function ProjectCard({ project }) {
