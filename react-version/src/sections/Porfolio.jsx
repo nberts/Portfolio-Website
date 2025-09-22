@@ -4,7 +4,7 @@ import ProjectCard from "../components/ProjectCard";
 function Portfolio() {
     const projectMetadata = {
         "AI-travel-planner": {
-            icon: '/icons/travel.svg'
+            icon: '/icons/AItravelPlanner.svg'
         },
         
         "Portfolio-Website": {
@@ -86,7 +86,7 @@ function Portfolio() {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await fetch('https://api.github.com/users/nberts/repos');
+                const response = await fetch('https://api.github.com/users/nberts/repos?per_page=100&sort=updated');
 
                 if (!response.ok) {
                     throw new Error('Oops! Something went wrong with the GitHub API.');
@@ -94,8 +94,10 @@ function Portfolio() {
 
                 const data = await response.json();
 
+                // fall back if no custom icon is created
+                const DEFAULT_ICON = '/icons/Misc.svg'; 
+
                 const formattedProjects = data
-                    .filter(repo => projectMetadata[repo.name])
                     .filter(repo => !excludeRepos.includes(repo.name))
                     .map(repo => ({
                         id: repo.id,
@@ -103,7 +105,7 @@ function Portfolio() {
                         repoUrl: repo.html_url,
                         homepage: repo.homepage,
                         description: repo.description,
-                        icon: projectMetadata[repo.name]?.icon || null
+                        icon: projectMetadata[repo.name]?.icon || DEFAULT_ICON
                 }));
 
                 setProjects(formattedProjects);
